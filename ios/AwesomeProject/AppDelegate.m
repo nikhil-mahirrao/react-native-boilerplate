@@ -10,6 +10,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
+#import "RCCManager.h"
 #import "RNSplashScreen.h"
 
 @implementation AppDelegate
@@ -34,7 +35,7 @@
   self.window.backgroundColor = [UIColor whiteColor];
   [[RCCManager sharedInstance] initBridgeWithBundleURL:jsCodeLocation launchOptions:launchOptions];
   
-  [RNSplashScreen show];
+//  [RNSplashScreen show];
   return YES;
 }
 

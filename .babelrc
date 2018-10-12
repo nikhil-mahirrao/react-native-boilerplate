@@ -2,5 +2,32 @@
   "presets": [
     "module:react-native-dotenv",
     "module:metro-react-native-babel-preset"
+  ],
+  "plugins": [
+    "@babel/transform-flow-strip-types",
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread",
+    "@babel/transform-runtime",
+    "@babel/plugin-transform-react-jsx-source",
+    "@babel/plugin-proposal-export-namespace-from",
+    [
+      "module-resolver",
+      {
+        "cwd": "babelrc",
+        "root": ["./src"],
+        "extensions": [
+          ".js",
+          ".ios.js",
+          ".android.js"
+        ],
+        "alias": {
+          "common": "./src/common",
+          "assets": "./src/assets",
+          "modules": "./src/modules",
+          "nav": "./src/nav",
+          "api.config": "./src/api.config"
+        }
+      }
+    ]
   ]
 }
